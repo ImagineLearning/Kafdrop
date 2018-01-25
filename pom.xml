@@ -9,7 +9,8 @@
    <description>For when you have a Kaf(ka) cluster to monitor</description>
 
    <properties>
-      <spring.boot.version>1.3.6.RELEASE</spring.boot.version>
+      <kafka.version>0.11.0.1</kafka.version>
+      <spring.boot.version>1.5.7.RELEASE</spring.boot.version>
       <additionalparam>-Xdoclint:none</additionalparam>
       <curator.version>2.10.0</curator.version>
    </properties>
@@ -40,6 +41,11 @@
          <version>2.6</version>
       </dependency>
       <dependency>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging-api</artifactId>
+        <version>1.1</version>
+      </dependency>
+      <dependency>
          <groupId>org.apache.curator</groupId>
          <artifactId>curator-recipes</artifactId>
          <version>${curator.version}</version>
@@ -55,19 +61,17 @@
          <version>3.4.8</version>
       </dependency>
       <dependency>
-         <groupId>org.apache.kafka</groupId>
-         <artifactId>kafka_2.9.2</artifactId>
-         <version>0.8.2.2</version>
+        <groupId>org.apache.kafka</groupId>
+        <artifactId>kafka_2.11</artifactId>
+        <version>${kafka.version}</version>
       </dependency>
       <dependency>
          <groupId>org.freemarker</groupId>
          <artifactId>freemarker</artifactId>
-         <version>2.3.23</version>
       </dependency>
       <dependency>
          <groupId>org.springframework.retry</groupId>
          <artifactId>spring-retry</artifactId>
-         <version>1.1.3.RELEASE</version>
       </dependency>
 
       <!-- Spring Boot -->
@@ -84,10 +88,6 @@
       <dependency>
          <groupId>org.springframework.boot</groupId>
          <artifactId>spring-boot-starter-freemarker</artifactId>
-      </dependency>
-      <dependency>
-         <groupId>org.springframework.boot</groupId>
-         <artifactId>spring-boot-starter-log4j</artifactId>
       </dependency>
       <dependency>
          <groupId>org.springframework.boot</groupId>
@@ -119,7 +119,6 @@
       <dependency>
          <groupId>junit</groupId>
          <artifactId>junit</artifactId>
-         <version>4.11</version>
          <scope>test</scope>
       </dependency>
       <dependency>
@@ -128,10 +127,7 @@
          <version>3.3.1</version>
          <scope>test</scope>
       </dependency>
-
    </dependencies>
-
-
 
    <build>
       <plugins>
